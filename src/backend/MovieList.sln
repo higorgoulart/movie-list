@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieList.WebAPI", "MovieList.WebAPI\MovieList.WebAPI.csproj", "{6870D18E-5E8B-4804-9760-831CB4D3AE13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieList.Domain", "MovieList.Domain\MovieList.Domain.csproj", "{1A74D03E-BD66-4037-9B56-D0E08842A75B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieList.Application", "MovieList.Application\MovieList.Application.csproj", "{60FD9C6B-1B1B-4D8F-8053-6E06553BFA20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieList.Infrastructure", "MovieList.Infrastructure\MovieList.Infrastructure.csproj", "{5CBA0C97-DF24-4D7B-B8BE-2284CB93D77E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A871C5AF-15D4-4172-9D0B-EC925AE4C403}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieList.WorkerService", "MovieList.WorkerService\MovieList.WorkerService.csproj", "{4FC9446D-DCC8-4175-BCB1-B1267C573C14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6870D18E-5E8B-4804-9760-831CB4D3AE13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6870D18E-5E8B-4804-9760-831CB4D3AE13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6870D18E-5E8B-4804-9760-831CB4D3AE13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6870D18E-5E8B-4804-9760-831CB4D3AE13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A74D03E-BD66-4037-9B56-D0E08842A75B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A74D03E-BD66-4037-9B56-D0E08842A75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A74D03E-BD66-4037-9B56-D0E08842A75B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A74D03E-BD66-4037-9B56-D0E08842A75B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60FD9C6B-1B1B-4D8F-8053-6E06553BFA20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60FD9C6B-1B1B-4D8F-8053-6E06553BFA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60FD9C6B-1B1B-4D8F-8053-6E06553BFA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60FD9C6B-1B1B-4D8F-8053-6E06553BFA20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CBA0C97-DF24-4D7B-B8BE-2284CB93D77E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CBA0C97-DF24-4D7B-B8BE-2284CB93D77E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CBA0C97-DF24-4D7B-B8BE-2284CB93D77E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CBA0C97-DF24-4D7B-B8BE-2284CB93D77E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FC9446D-DCC8-4175-BCB1-B1267C573C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FC9446D-DCC8-4175-BCB1-B1267C573C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FC9446D-DCC8-4175-BCB1-B1267C573C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FC9446D-DCC8-4175-BCB1-B1267C573C14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6870D18E-5E8B-4804-9760-831CB4D3AE13} = {A871C5AF-15D4-4172-9D0B-EC925AE4C403}
+		{4FC9446D-DCC8-4175-BCB1-B1267C573C14} = {A871C5AF-15D4-4172-9D0B-EC925AE4C403}
+	EndGlobalSection
+EndGlobal
