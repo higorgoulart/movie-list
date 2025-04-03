@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Net.Http;
 using dotenv.net;
 using Hangfire;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Owin;
 using MovieList.Application.Jobs;
 using MovieList.Domain.Repositories;
+using MovieList.Infrastructure;
 using MovieList.Infrastructure.Repositories;
 using Owin;
 
@@ -25,6 +27,16 @@ public class Startup
         
         DotEnv.Load(options: new DotEnvOptions(probeForEnv: true));
         
+        services.AddScoped(_ => new HttpClient
+        {
+            BaseAddress = new Uri("https://api.themoviedb.org/3/"),
+            DefaultRequestHeaders =
+            {
+                { "accept", "application/json" },
+                { "Authorization", $"Bearer {Environment.GetEnvironmentVariable("TMDB_ACCESS_TOKEN")}" },
+            }
+        });
+        services.AddScoped(_ => new MovieListDbContext());
         services.AddScoped<IMovieRepository, MovieRepository>();
         services.AddScoped<TmdbJob>();
 

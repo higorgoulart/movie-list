@@ -17,7 +17,7 @@ public class MvcApplication : System.Web.HttpApplication
             RecurringJob.AddOrUpdate<TmdbJob>(
                 nameof(TmdbJob), 
                 job => job.Execute(), 
-                Cron.Minutely
+                Cron.Hourly
             );
         }
     }

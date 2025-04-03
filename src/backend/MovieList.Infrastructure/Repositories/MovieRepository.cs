@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using MovieList.Domain.Entities;
@@ -7,13 +8,12 @@ using MovieList.Domain.Repositories;
 
 namespace MovieList.Infrastructure.Repositories;
 
-public class MovieRepository : IMovieRepository
+[ExcludeFromCodeCoverage]
+public class MovieRepository(MovieListDbContext context) : IMovieRepository
 {
-    private readonly MovieListDbContext _context = new();
-
     public async Task<Movie> GetByIdAsync(int id)
     {
-        return await _context.Movies.FindAsync(id);
+        return await context.Movies.FindAsync(id);
     }
     
     public async Task<IEnumerable<Movie>> GetAllAsync(
@@ -23,7 +23,7 @@ public class MovieRepository : IMovieRepository
         int? yearFilter, 
         double? minVoteFilter)
     {
-        var query = _context.Movies.AsQueryable();
+        var query = context.Movies.AsQueryable();
 
         if (!string.IsNullOrEmpty(titleFilter))
             query = query.Where(m => m.Title.Contains(titleFilter));
@@ -46,7 +46,7 @@ public class MovieRepository : IMovieRepository
         int? yearFilter, 
         double? minVoteFilter)
     {
-        var query = _context.Movies.AsQueryable();
+        var query = context.Movies.AsQueryable();
 
         if (!string.IsNullOrEmpty(titleFilter))
             query = query.Where(m => m.Title.Contains(titleFilter));
@@ -65,7 +65,7 @@ public class MovieRepository : IMovieRepository
         var existingMovie = await GetByIdAsync(movie.Id);
         if (existingMovie is null)
         {
-            _context.Movies.Add(movie);
+            context.Movies.Add(movie);
         }
         else
         {
@@ -78,6 +78,6 @@ public class MovieRepository : IMovieRepository
             existingMovie.PosterPath = movie.PosterPath;
         }
         
-        await _context.SaveChangesAsync();
+        await context.SaveChangesAsync();
     }
 }

@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieList.WorkerService", "MovieList.WorkerService\MovieList.WorkerService.csproj", "{4FC9446D-DCC8-4175-BCB1-B1267C573C14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieList.Test", "MovieList.Test\MovieList.Test.csproj", "{133F6EB5-E524-45C7-B517-CE477FA2E7CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{4FC9446D-DCC8-4175-BCB1-B1267C573C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FC9446D-DCC8-4175-BCB1-B1267C573C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FC9446D-DCC8-4175-BCB1-B1267C573C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{133F6EB5-E524-45C7-B517-CE477FA2E7CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{133F6EB5-E524-45C7-B517-CE477FA2E7CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{133F6EB5-E524-45C7-B517-CE477FA2E7CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{133F6EB5-E524-45C7-B517-CE477FA2E7CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6870D18E-5E8B-4804-9760-831CB4D3AE13} = {A871C5AF-15D4-4172-9D0B-EC925AE4C403}

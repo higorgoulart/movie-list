@@ -8,18 +8,8 @@ using Newtonsoft.Json;
 
 namespace MovieList.Application.Jobs;
 
-public class TmdbJob(IMovieRepository movieRepository)
+public class TmdbJob(IMovieRepository movieRepository, HttpClient httpClient)
 {
-    private readonly HttpClient _httpClient = new()
-    {
-        BaseAddress = new Uri("https://api.themoviedb.org/3/"),
-        DefaultRequestHeaders =
-        {
-            { "accept", "application/json" },
-            { "Authorization", $"Bearer {Environment.GetEnvironmentVariable("TMDB_ACCESS_TOKEN")}" },
-        }
-    };
-
     public async Task Execute()
     {
         const int maxPages = 5;
@@ -27,7 +17,7 @@ public class TmdbJob(IMovieRepository movieRepository)
 
         while (page <= maxPages)
         {
-            var response = await _httpClient.GetAsync($"movie/popular?language=en-US&page={page}");
+            var response = await httpClient.GetAsync($"movie/popular?language=en-US&page={page}");
             if (!response.IsSuccessStatusCode)
                 break;
             

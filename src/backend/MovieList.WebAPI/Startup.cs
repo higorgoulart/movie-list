@@ -8,6 +8,7 @@ using Microsoft.Owin;
 using MovieList.Application.Services;
 using MovieList.Domain.Repositories;
 using MovieList.Domain.Services;
+using MovieList.Infrastructure;
 using MovieList.Infrastructure.Repositories;
 using MovieList.WebAPI.Controllers;
 using Newtonsoft.Json.Serialization;
@@ -50,6 +51,7 @@ public class Startup
     {
         var services = new ServiceCollection();
         
+        services.AddScoped(_ => new MovieListDbContext());
         services.AddScoped<IMovieRepository, MovieRepository>();
         services.AddScoped<IMovieService, MovieService>();
         services.AddTransient<MovieController>();
